@@ -15,3 +15,26 @@ function passwordvalidation(){
         repeatpassword.classList.add("border-yellow-300")
     }
 }
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+function previousmonth(){
+    let current = document.getElementById("currentmonth")
+    let month = current.innerHTML
+    let index = months.indexOf(month)
+    if (index === 0){
+        current.innerHTML = months[11]
+    }
+    else{
+        current.innerHTML = months[index-1]
+    }
+}
+function nextmonth(){
+    let current = document.getElementById("currentmonth")
+    let month = current.innerHTML
+    let index = months.indexOf(month)
+    if (index === 11){
+        current.innerHTML = months[0]
+    }
+    else{
+        current.innerHTML = months[index+1]
+    }
+}
