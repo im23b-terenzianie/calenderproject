@@ -1,18 +1,22 @@
 function passwordvalidation(){
     let pw = document.getElementById("password")
     let rpw = document.getElementById("repeatpassword")
-    if (pw === rpw){
-        password.classList.remove("border-yellow-300")
-        repeatpassword.classList.remove("border-yellow-300")
-        password.classList.add("border-green-300")
-        repeatpassword.classList.add("border-green-300")
+    if (pw.value === rpw.value){
+        pw.classList.remove("border-yellow-300")
+        rpw.classList.remove("border-yellow-300")
+        pw.classList.remove("border-red-300")
+        rpw.classList.remove("border-red-300")
+        pw.classList.add("border-green-300")
+        rpw.classList.add("border-green-300")
 
     }
     else{
-        password.classList.remove("border-yellow-300")
-        repeatpassword.classList.remove("border-yellow-300")
-        password.classList.add("border-yellow-300")
-        repeatpassword.classList.add("border-yellow-300")
+        pw.classList.remove("border-yellow-300")
+        rpw.classList.remove("border-yellow-300")
+        pw.classList.remove("border-green-300")
+        rpw.classList.remove("border-green-300")
+        pw.classList.add("border-red-300")
+        rpw.classList.add("border-red-300")
     }
 }
 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
