@@ -42,3 +42,23 @@ function nextmonth(){
         current.innerHTML = months[index+1]
     }
 }
+function startday(){
+    const year=  new Date().getFullYear();
+    const month = months.indexOf(document.getElementById("currentmonth").innerHTML);
+    const firstday = new Date(year, month, 1).getDay();
+    const weekday = firstday === 0 ? 7 : firstday;
+    return weekday;
+}
+function daysinmonth(){
+    const index = months.indexOf(document.getElementById("currentmonth").innerHTML) + 1;
+    if (index === 4 || index === 6 || index === 9 || index === 11){
+        const monthdays = 30
+        console.log(monthdays)
+    } else if (index === 2){
+        const monthdays = 28
+        console.log(monthdays)
+    } else{
+        const monthdays = 31
+        console.log(monthdays)
+    }
+}
