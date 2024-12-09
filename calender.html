@@ -17,9 +17,9 @@
 </header>
 <main>
     <div class="flex justify-center items-center">
-        <button onclick="previousmonth()"><</button>
+        <button onclick="previousmonth(); createcalender()"><</button>
         <div class="my-1 mx-3 border-2 w-1/12 text-center " id="currentmonth">January</div>
-        <button onclick="nextmonth(); daysinmonth()" >></button>
+        <button onclick="nextmonth(); createcalender()" >></button>
     </div>
 
     <div class="grid grid-cols-7 ">
@@ -32,47 +32,64 @@
         <div class="border-b-2 border-l-2 border-t-2">Sunday</div>
     </div>
     <div class="grid grid-cols-7">
-        <div class="border-b-2 border-l-2 h-32">1</div>
-        <div class="border-b-2 border-l-2 h-32">2</div>
-        <div class="border-b-2 border-l-2 h-32">3</div>
-        <div class="border-b-2 border-l-2 h-32">4</div>
-        <div class="border-b-2 border-l-2 h-32">5</div>
-        <div class="border-b-2 border-l-2 h-32">6</div>
-        <div class="border-b-2 border-l-2 h-32">7</div>
+        <div class="border-b-2 border-l-2 h-32" id="cell1"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell2"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell3"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell4"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell5"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell6"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell7"></div>
     </div>
     <div class="grid grid-cols-7">
-        <div class="border-b-2 border-l-2 h-32">8</div>
-        <div class="border-b-2 border-l-2 h-32">9</div>
-        <div class="border-b-2 border-l-2 h-32">10</div>
-        <div class="border-b-2 border-l-2 h-32">11</div>
-        <div class="border-b-2 border-l-2 h-32">12</div>
-        <div class="border-b-2 border-l-2 h-32">13</div>
-        <div class="border-b-2 border-l-2 h-32">14</div>
+        <div class="border-b-2 border-l-2 h-32" id="cell8"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell9"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell10"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell11"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell12"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell13"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell14"></div>
     </div>
     <div class="grid grid-cols-7">
-        <div class="border-b-2 border-l-2 h-32">15</div>
-        <div class="border-b-2 border-l-2 h-32">16</div>
-        <div class="border-b-2 border-l-2 h-32">17</div>
-        <div class="border-b-2 border-l-2 h-32">18</div>
-        <div class="border-b-2 border-l-2 h-32">19</div>
-        <div class="border-b-2 border-l-2 h-32">20</div>
-        <div class="border-b-2 border-l-2 h-32">21</div>
+        <div class="border-b-2 border-l-2 h-32" id="cell15"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell16"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell17"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell18"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell19"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell20"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell21"></div>
     </div>
     <div class="grid grid-cols-7">
-        <div class="border-b-2 border-l-2 h-32">22</div>
-        <div class="border-b-2 border-l-2 h-32">23</div>
-        <div class="border-b-2 border-l-2 h-32">24</div>
-        <div class="border-b-2 border-l-2 h-32">25</div>
-        <div class="border-b-2 border-l-2 h-32">26</div>
-        <div class="border-b-2 border-l-2 h-32">27</div>
-        <div class="border-b-2 border-l-2 h-32">28</div>
+        <div class="border-b-2 border-l-2 h-32" id="cell22"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell23"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell24"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell25"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell26"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell27"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell28"></div>
     </div>
     <div class="grid grid-cols-7">
-        <div class="border-b-2 border-l-2 h-32">29</div>
-        <div class="border-b-2 border-l-2 h-32">30</div>
-        <div class="border-b-2 border-l-2  h-32">31</div>
-        <div class="border-l-2 h-32"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell29"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell30"></div>
+        <div class="border-b-2 border-l-2  h-32" id="cell31"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell32"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell33"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell34"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell35"></div>
     </div>
+    <div class="grid grid-cols-7">
+        <div class="border-b-2 border-l-2 h-32" id="cell36"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell37"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell38"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell39"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell40"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell41"></div>
+        <div class="border-b-2 border-l-2 h-32" id="cell42"></div>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    createcalender();
+    });
+    </script>
 
 </main>
 </body>

@@ -53,12 +53,29 @@ function daysinmonth(){
     const index = months.indexOf(document.getElementById("currentmonth").innerHTML) + 1;
     if (index === 4 || index === 6 || index === 9 || index === 11){
         const monthdays = 30
-        console.log(monthdays)
+        return monthdays
     } else if (index === 2){
         const monthdays = 28
-        console.log(monthdays)
+        return monthdays
     } else{
         const monthdays = 31
-        console.log(monthdays)
+        return monthdays
     }
 }
+
+function createcalender(){
+    const weekday = startday();
+    const monthdays = daysinmonth();
+    let i = 1
+    while (i <= 42) {
+        let cell = document.getElementById("cell" + i)
+        if (i < weekday || i > monthdays + weekday - 1){
+            cell.innerHTML = ""
+        }
+        else{
+            cell.innerHTML = i - weekday + 1
+        }
+        i++;
+    }
+}
+
