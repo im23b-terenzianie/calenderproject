@@ -1,4 +1,4 @@
-import pw from './pw.js';
+import pw from '../gitignore/pw.js';
 
 
 var mysql = require('mysql');
