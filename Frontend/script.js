@@ -79,3 +79,6 @@ function createcalender(){
     }
 }
 
+function opennote() {
+
+}
