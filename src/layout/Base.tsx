@@ -10,10 +10,10 @@ interface LayoutProps {
 export default function Base({children}: LayoutProps) {
     return (
         <div className="app">
-            <nav className="flex justify-between items-center bg-stone-400 p-2">
+            <nav className="flex justify-between items-center bg-black p-2 dark:bg-white">
                 <ul className="flex items-center">
                     <li>
-                        <Link href="/">
+                        <Link href="/" className="dark:text-black">
                             <Image
                                 src="/logo.png"
                                 alt="Logo"
@@ -26,7 +26,7 @@ export default function Base({children}: LayoutProps) {
                 </ul>
                 <ul className="flex items-center">
                     <li>
-                        <Link href="/login" className="border-2 rounded border-yellow-300 mx-5 p-0.5 bg-yellow-300">
+                        <Link href="/login" className="border-2 rounded border-yellow-300 mx-5 p-0.5 bg-yellow-300 dark: text-black">
                                 Login
                         </Link>
                     </li>
@@ -35,7 +35,7 @@ export default function Base({children}: LayoutProps) {
             {/* Hauptinhalt */}
             <main>{children}</main>
             {/* Footer */}
-            <footer className="bg-stone-400 p-2 text-center">
+            <footer className="bg-black p-2 text-center dark:bg-white text-black">
                 <p>© 2021 All rights reserved</p>
             </footer>
         </div>
