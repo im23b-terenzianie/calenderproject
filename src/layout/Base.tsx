@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {ReactNode} from 'react';
 import '../../app/globals.css';
-
+import Login from '../components/loginbutton';
 interface LayoutProps {
     children: ReactNode;
 }
@@ -26,9 +26,7 @@ export default function Base({children}: LayoutProps) {
                 </ul>
                 <ul className="flex items-center">
                     <li>
-                        <Link href="/login" className="border-2 rounded border-yellow-300 mx-5 p-0.5 bg-yellow-300 dark: text-black">
-                                Login
-                        </Link>
+                        <Login />
                     </li>
                 </ul>
             </nav>
