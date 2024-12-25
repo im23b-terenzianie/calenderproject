@@ -1,6 +1,8 @@
 import '../../app/globals.css';
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import {router} from "next/client";
+
 
 export default function Register() {
     const passwordRef = useRef<HTMLInputElement | null>(null);
@@ -13,7 +15,6 @@ export default function Register() {
 
         if (pw && rpw && status) {
             const match = pw.value === rpw.value;
-            // Aktualisiere den Textstatus basierend auf der Übereinstimmung
             status.textContent = match
                 ? "Passwords match."
                 : "Passwords do not match.";
@@ -39,6 +40,7 @@ export default function Register() {
     }, []);
 
     return (
+
         <div className="flex justify-center items-center h-screen">
             <div className="bg-black p-5 rounded-lg dark:bg-white">
                 <h1 className="text-2xl text-white text-center dark:text-black">Register</h1>
@@ -66,13 +68,27 @@ export default function Register() {
                     />
                 </div>
                 <div id="password-status" className="text-white dark:text-black"></div>
-                <Link
+                <button
                     className="p-2 bg-gray-800 rounded-lg dark:bg-gray-200 text-black"
-                    href="/calender"
+                    type="submit"
+                    onClick={() => {
+                        const pw = passwordRef.current;
+                        const rpw = repeatPasswordRef.current;
+                        if (pw && rpw){
+                            if (pw === rpw) {
+                                router.push("/calender");
+                            } else {
+                                router.push("/register");
+                            }
+
+                        }
+                    }
+                }
                 >
                     Register
-                </Link>
+                </button>
             </div>
         </div>
+
     );
 }
