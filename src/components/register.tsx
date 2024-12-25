@@ -38,6 +38,17 @@ export default function Register() {
             }
         };
     }, []);
+    function handleSubmit() {
+        const pw = passwordRef.current;
+        const rpw = repeatPasswordRef.current;
+        if (pw && rpw){
+            if (pw.value === rpw.value){
+                router.push("/calender");
+            }
+            else{
+            }
+        }
+    }
 
     return (
 
@@ -71,19 +82,7 @@ export default function Register() {
                 <button
                     className="p-2 bg-gray-800 rounded-lg dark:bg-gray-200 text-black"
                     type="submit"
-                    onClick={() => {
-                        const pw = passwordRef.current;
-                        const rpw = repeatPasswordRef.current;
-                        if (pw && rpw){
-                            if (pw === rpw) {
-                                router.push("/calender");
-                            } else {
-                                router.push("/register");
-                            }
-
-                        }
-                    }
-                }
+                    onClick={handleSubmit}
                 >
                     Register
                 </button>
