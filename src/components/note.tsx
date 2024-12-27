@@ -12,7 +12,7 @@ export default function Note(){
             {isVisible ? "Hide Note" : "Show Note"}
             </button>
             {isVisible && (
-        <div className="hidden justify-center items-center h-screen" id="Note">
+        <div className="flex justify-center items-center h-screen" id="Note">
             <label className="text-white dark:text-black">Title</label>
             <input className="p-2 mb-3 bg-gray-800 rounded-lg dark:bg-gray-200" type="text" id="Title"/>
             <label className="text-white dark:text-black">Note</label>
