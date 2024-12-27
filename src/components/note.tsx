@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 export default function Note() {
     const [isVisible, setIsVisible] = useState(false);
@@ -9,15 +9,12 @@ export default function Note() {
 
     return (
         <div>
-            {/* Add Note Button */}
             <button
                 className="p-2 bg-blue-500 text-white rounded-lg"
                 onClick={showNote}
             >
                 {isVisible ? "Close Note" : "Add Note"}
             </button>
-
-            {/* Popup Modal */}
             {isVisible && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
