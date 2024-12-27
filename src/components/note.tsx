@@ -1,14 +1,17 @@
-
+import React, { useState } from 'react';
 export default function Note(){
+    const [isVisible, setIsVisible] = useState(false);
+
     function showNote(){
-        const note = document.getElementById("Note")
-        if (note) {
-            note.classList.toggle("hidden")
-        }
+    setIsVisible(!isVisible);
 
     }
     return (
-        addEventListener("click", showNote),
+        <div>
+            <button onClick={showNote}>Add Note
+            {isVisible ? "Hide Note" : "Show Note"}
+            </button>
+            {isVisible && (
         <div className="hidden justify-center items-center h-screen" id="Note">
             <label className="text-white dark:text-black">Title</label>
             <input className="p-2 mb-3 bg-gray-800 rounded-lg dark:bg-gray-200" type="text" id="Title"/>
@@ -19,5 +22,8 @@ export default function Note(){
             <button className="p-2 bg-gray-800 rounded-lg dark:bg-gray-200 text-black" id="Save">Save</button>
 
         </div>
+    ) }
+        </div>
     )
+
 }
