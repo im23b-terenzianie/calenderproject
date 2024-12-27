@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../app/globals.css';
-
+import Note from './note';
 
 export default function Calenderrows() {
     return (
@@ -15,7 +15,7 @@ export default function Calenderrows() {
             <div className="border-b-2 border-l-2 border-t-2">Sunday</div>
         </div>
     <div className="grid grid-cols-7">
-        <div className="border-b-2 border-l-2 h-32 Datecell" id="cell1"></div>
+        <div className="border-b-2 border-l-2 h-32 Datecell" id="cell1" onClick={Note}></div>
         <div className="border-b-2 border-l-2 h-32 Datecell" id="cell2"></div>
         <div className="border-b-2 border-l-2 h-32 Datecell" id="cell3"></div>
         <div className="border-b-2 border-l-2 h-32 Datecell" id="cell4"></div>
