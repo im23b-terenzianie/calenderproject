@@ -1,8 +1,16 @@
-import React from 'react';
 import '../../app/globals.css';
-import Note from './note';
+import React, { useRef } from "react";
+import Note, { NoteRef } from "./note";
 
 export default function Calenderrows() {
+    const noteRef = useRef<NoteRef>(null);
+
+    function handleCellClick() {
+        if (noteRef.current) {
+            noteRef.current.showNote();
+        }
+    }
+
     return (
         <div>
         <div className="grid grid-cols-7 ">
@@ -15,7 +23,7 @@ export default function Calenderrows() {
             <div className="border-b-2 border-l-2 border-t-2">Sunday</div>
         </div>
     <div className="grid grid-cols-7">
-        <div className="border-b-2 border-l-2 h-32 flex justify-between Datecell" id="cell1"><Note/></div>
+        <div className="border-b-2 border-l-2 h-32 flex justify-between Datecell" id="cell1" onClick={handleCellClick}></div>
         <div className="border-b-2 border-l-2 h-32 Datecell" id="cell2"></div>
         <div className="border-b-2 border-l-2 h-32 Datecell" id="cell3"></div>
         <div className="border-b-2 border-l-2 h-32 Datecell" id="cell4"></div>
