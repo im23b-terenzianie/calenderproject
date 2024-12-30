@@ -4,14 +4,13 @@ export interface NoteRef {
     showNote: () => void;
 }
 
-const Note = forwardRef<NoteRef>((_, ref) => {
+const Note = forwardRef<NoteRef>((props, ref) => {
     const [isVisible, setIsVisible] = useState(false);
 
     function showNote() {
-        setIsVisible((prev) => !prev);
+        setIsVisible(!isVisible);
     }
 
-    // Exponiere `showNote` mit `useImperativeHandle`
     useImperativeHandle(ref, () => ({
         showNote,
     }));
