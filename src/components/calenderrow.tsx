@@ -10,10 +10,8 @@ export default function Calenderrows() {
             noteRef.current.showNote();
         }
     }
-
     return (
         <div>
-            {/* Kalenderüberschrift */}
             <div className="grid grid-cols-7">
                 <div className="border-b-2 border-l-2 border-t-2">Monday</div>
                 <div className="border-b-2 border-l-2 border-t-2">Tuesday</div>
