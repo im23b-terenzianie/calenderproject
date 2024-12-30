@@ -42,7 +42,7 @@ const Note = forwardRef<NoteRef>((props, ref) => {
                         <form onSubmit={handleSave}>
                             <label className="text-black block mb-1">Title</label>
                             <input
-                                className="w-full p-2 mb-4 bg-gray-100 rounded-lg"
+                                className="w-full p-2 mb-4 bg-gray-100 rounded-lg dark:text-black"
                                 type="text"
                                 id="Title"
                                 value={inputs.Title}
@@ -50,7 +50,7 @@ const Note = forwardRef<NoteRef>((props, ref) => {
                             />
                             <label className="text-black block mb-1">Note</label>
                             <textarea
-                                className="w-full p-2 mb-4 bg-gray-100 rounded-lg"
+                                className="w-full p-2 mb-4 bg-gray-100 rounded-lg dark:text-black"
                                 id="Textnote"
                                 value={inputs.Textnote}
                                 onChange={handleChange}
