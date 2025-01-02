@@ -1,16 +1,21 @@
-import React, {useRef} from 'react';
-import Note, {NoteRef} from "@/src/components/note";
-export default function Task() {
-    function handleGetTitle() {
-        if (noteRef.current){
-            return noteRef.current.getTitle();
+import React, { useEffect } from 'react';
+import { NoteRef } from "@/src/components/note";
+
+interface TaskProps {
+    noteRef: React.RefObject<NoteRef>;
+}
+
+export default function Task({ noteRef }: TaskProps) {
+    useEffect(() => {
+        if (noteRef.current) {
+            const Tasktitle = noteRef.current.getTitle();
+            document.getElementById("TitleId")!.innerText = Tasktitle || "";
         }
-    }
-    const noteRef = useRef<NoteRef>(null);
+    }, [noteRef]);
+
     return (
         <div className="bg-gray-800 dark:bg-gray-200">
-            <div className="font-white dark:font-black">
-
+            <div className="font-white dark:font-black" id="TitleId">
             </div>
         </div>
     );

@@ -28,7 +28,7 @@ export default function Base({children}: LayoutProps) {
             <main>{children}</main>
             {/* Footer */}
             <footer className="bg-black p-2 text-center dark:bg-white text-black">
-                <p>© 2021 All rights reserved</p>
+                <p>Made by Enzo Terenziani</p>
             </footer>
         </div>
     );

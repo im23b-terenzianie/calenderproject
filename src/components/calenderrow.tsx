@@ -1,15 +1,17 @@
 import '../../app/globals.css';
 import React, { useRef } from "react";
 import Note, { NoteRef } from "./note";
+import Task from "@/src/components/task";
 
 export default function Calenderrows() {
-    const noteRef = useRef<NoteRef>(null);
+    const noteRef = useRef<NoteRef>(null as any);
 
     function handleCellClick() {
         if (noteRef.current) {
             noteRef.current.showNote();
         }
     }
+
     return (
         <div>
             <div className="grid grid-cols-7">
@@ -31,8 +33,8 @@ export default function Calenderrows() {
                     ></div>
                 ))}
             </div>
-            <Note ref={noteRef} />
+            <Note ref={noteRef} Title="" Textnote="" />
+            <Task noteRef={noteRef} />
         </div>
     );
 }
-

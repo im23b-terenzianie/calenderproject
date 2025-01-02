@@ -7,6 +7,7 @@ export interface NoteProps {
 export interface NoteRef {
     showNote: () => void;
     getTitle: () => string;
+    getTextNote: () => string;
 }
 
 const Note = forwardRef<NoteRef, NoteProps>((props, ref) => {
@@ -19,6 +20,7 @@ const Note = forwardRef<NoteRef, NoteProps>((props, ref) => {
     useImperativeHandle(ref, () => ({
         showNote,
         getTitle: () => inputs.Title,
+        getTextNote: () => inputs.Textnote,
     }));
 
     const [inputs, setInputs] = useState({
@@ -41,8 +43,7 @@ const Note = forwardRef<NoteRef, NoteProps>((props, ref) => {
     function handleDelete(event: React.MouseEvent<HTMLButtonElement>) {
         setInputs({ Title: "", Textnote: ""});
         showNote();
-        }
-
+    }
 
     return (
         <div>
