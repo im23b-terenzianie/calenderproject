@@ -3,6 +3,7 @@ import React, { useState, forwardRef, useImperativeHandle } from "react";
 export interface NoteProps {
     Title: string;
     Textnote: string;
+    onSave: () => void;
 }
 export interface NoteRef {
     showNote: () => void;
@@ -38,8 +39,10 @@ const Note = forwardRef<NoteRef, NoteProps>((props, ref) => {
 
     function handleSave(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        console.log(inputs);
+        props.onSave();
+        showNote();
     }
+
     function handleDelete(event: React.MouseEvent<HTMLButtonElement>) {
         setInputs({ Title: "", Textnote: ""});
         showNote();
@@ -71,7 +74,6 @@ const Note = forwardRef<NoteRef, NoteProps>((props, ref) => {
                                 className="p-2 bg-blue-500 text-white rounded-lg"
                                 id="Save"
                                 type="submit"
-                                onClick={showNote}
                             >
                                 Save
                             </button>

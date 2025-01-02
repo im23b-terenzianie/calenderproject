@@ -1,20 +1,37 @@
-import '../../app/globals.css';
-import React, { useRef } from "react";
+import "../../app/globals.css";
+import React, { useRef, useState } from "react";
 import Note, { NoteRef } from "./note";
-import Task from "@/src/components/task";
 
 export default function Calenderrows() {
     const noteRef = useRef<NoteRef>(null as any);
+    const [selectedCell, setSelectedCell] = useState<number | null>(null);
+    const [titles, setTitles] = useState<string[]>(Array(42).fill(""));
 
-    function handleCellClick() {
+    // Beim Klick auf eine Zelle
+    function handleCellClick(index: number) {
+        setSelectedCell(index); // Index der Zelle speichern
         if (noteRef.current) {
-            noteRef.current.showNote();
+            noteRef.current.showNote(); // Notiz anzeigen
+        }
+    }
+
+    // Beim Speichern der Notiz
+    function handleSave() {
+        if (noteRef.current && selectedCell !== null) {
+            const Tasktitle = noteRef.current.getTitle(); // Titel der Notiz abrufen
+            setTitles((prevTitles) => {
+                const newTitles = [...prevTitles];
+                newTitles[selectedCell] = Tasktitle; // Titel der Zelle zuweisen
+                return newTitles;
+            });
+            if (noteRef.current) noteRef.current.showNote(); // Notiz schließen
         }
     }
 
     return (
         <div>
-            <div className="grid grid-cols-7">
+            {/* Tage der Woche */}
+            <div className="grid grid-cols-7 text-center font-bold">
                 <div className="border-b-2 border-l-2 border-t-2">Monday</div>
                 <div className="border-b-2 border-l-2 border-t-2">Tuesday</div>
                 <div className="border-b-2 border-l-2 border-t-2">Wednesday</div>
@@ -23,18 +40,26 @@ export default function Calenderrows() {
                 <div className="border-b-2 border-l-2 border-t-2">Saturday</div>
                 <div className="border-b-2 border-l-2 border-t-2">Sunday</div>
             </div>
+
+            {/* Kalenderzellen */}
             <div className="grid grid-cols-7">
                 {[...Array(42)].map((_, i) => (
                     <div
                         key={i}
-                        className="border-b-2 border-l-2 h-32 flex justify-between Datecell"
+                        className="border-b-2 border-l-2 h-32 flex flex-col justify-between items-center p-2 cursor-pointer"
                         id={`cell${i + 1}`}
-                        onClick={handleCellClick}
-                    ></div>
+                        onClick={() => handleCellClick(i)}
+                    >
+                        <div className="font-bold">{i + 1}</div>
+                        <div className="text-sm text-gray-700 bg-gray-100 rounded p-1 w-full text-center">
+                            {titles[i] || "No Note"} {/* Titel anzeigen oder Standardtext */}
+                        </div>
+                    </div>
                 ))}
             </div>
-            <Note ref={noteRef} Title="" Textnote="" />
-            <Task noteRef={noteRef} />
+
+            {/* Notiz-Komponente */}
+            <Note ref={noteRef} Title="" Textnote="" onSave={handleSave} />
         </div>
     );
 }
