@@ -32,6 +32,11 @@ const Note = forwardRef<NoteRef>((props, ref) => {
         event.preventDefault();
         console.log(inputs);
     }
+    function handleDelete(event: React.MouseEvent<HTMLButtonElement>) {
+        setInputs({ Title: "", Textnote: ""});
+        showNote();
+        }
+
 
     return (
         <div>
@@ -39,7 +44,7 @@ const Note = forwardRef<NoteRef>((props, ref) => {
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
                         <h2 className="text-xl font-bold text-black mb-4">Add Note</h2>
-                        <form onSubmit={handleSave}>
+                        <form onSubmit={handleSave} >
                             <label className="text-black block mb-1">Title</label>
                             <input
                                 className="w-full p-2 mb-4 bg-gray-100 rounded-lg dark:text-black"
@@ -59,13 +64,15 @@ const Note = forwardRef<NoteRef>((props, ref) => {
                                 className="p-2 bg-blue-500 text-white rounded-lg"
                                 id="Save"
                                 type="submit"
+                                onClick={showNote}
                             >
                                 Save
                             </button>
                             <button
                                 className="p-2 bg-blue-500 text-white rounded-lg"
                                 id="Delete"
-                                onClick={showNote}
+                                type="reset"
+                                onClick={handleDelete}
                             >
                                 Delete
                             </button>
