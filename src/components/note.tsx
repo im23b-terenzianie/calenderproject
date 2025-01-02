@@ -1,10 +1,15 @@
 import React, { useState, forwardRef, useImperativeHandle } from "react";
 
+export interface NoteProps {
+    Title: string;
+    Textnote: string;
+}
 export interface NoteRef {
     showNote: () => void;
+    getTitle: () => string;
 }
 
-const Note = forwardRef<NoteRef>((props, ref) => {
+const Note = forwardRef<NoteRef, NoteProps>((props, ref) => {
     const [isVisible, setIsVisible] = useState(false);
 
     function showNote() {
@@ -13,11 +18,12 @@ const Note = forwardRef<NoteRef>((props, ref) => {
 
     useImperativeHandle(ref, () => ({
         showNote,
+        getTitle: () => inputs.Title,
     }));
 
     const [inputs, setInputs] = useState({
-        Title: "",
-        Textnote: "",
+        Title: props.Title || "",
+        Textnote: props.Textnote || "",
     });
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -50,14 +56,14 @@ const Note = forwardRef<NoteRef>((props, ref) => {
                                 className="w-full p-2 mb-4 bg-gray-100 rounded-lg dark:text-black"
                                 type="text"
                                 id="Title"
-                                value={inputs.Title}
+                                value={inputs.Title || ""}
                                 onChange={handleChange}
                             />
                             <label className="text-black block mb-1">Note</label>
                             <textarea
                                 className="w-full p-2 mb-4 bg-gray-100 rounded-lg dark:text-black"
                                 id="Textnote"
-                                value={inputs.Textnote}
+                                value={inputs.Textnote || ""}
                                 onChange={handleChange}
                             ></textarea>
                             <button
