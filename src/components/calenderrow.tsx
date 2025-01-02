@@ -7,7 +7,6 @@ export default function Calenderrows() {
     const [selectedCell, setSelectedCell] = useState<number | null>(null);
     const [titles, setTitles] = useState<string[]>(Array(42).fill(""));
 
-    // Beim Klick auf eine Zelle
     function handleCellClick(index: number) {
         setSelectedCell(index); // Index der Zelle speichern
         if (noteRef.current) {
@@ -15,7 +14,6 @@ export default function Calenderrows() {
         }
     }
 
-    // Beim Speichern der Notiz
     function handleSave() {
         if (noteRef.current && selectedCell !== null) {
             const Tasktitle = noteRef.current.getTitle(); // Titel der Notiz abrufen
@@ -30,7 +28,6 @@ export default function Calenderrows() {
 
     return (
         <div>
-            {/* Tage der Woche */}
             <div className="grid grid-cols-7 text-center font-bold">
                 <div className="border-b-2 border-l-2 border-t-2">Monday</div>
                 <div className="border-b-2 border-l-2 border-t-2">Tuesday</div>
@@ -41,7 +38,6 @@ export default function Calenderrows() {
                 <div className="border-b-2 border-l-2 border-t-2">Sunday</div>
             </div>
 
-            {/* Kalenderzellen */}
             <div className="grid grid-cols-7">
                 {[...Array(42)].map((_, i) => (
                     <div
@@ -58,7 +54,6 @@ export default function Calenderrows() {
                 ))}
             </div>
 
-            {/* Notiz-Komponente */}
             <Note ref={noteRef} Title="" Textnote="" onSave={handleSave} />
         </div>
     );
