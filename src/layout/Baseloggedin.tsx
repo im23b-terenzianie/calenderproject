@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {ReactNode} from 'react';
 import '../../app/globals.css';
+import Logo from '../components/Logo';
 interface LayoutProps {
     children: ReactNode;
 }
@@ -9,25 +10,19 @@ interface LayoutProps {
 export default function Base({children}: LayoutProps) {
     return (
         <div className="app">
-            <nav className="flex justify-between items-center bg-black p-2 dark:bg-white">
+            <nav className="flex justify-between items-center bg-gray-800 p-2 ">
                 <ul className="flex items-center">
                     <li>
                         <Link href="/" className="dark:text-black">
-                            <Image
-                                src="/logo.png"
-                                alt="Logo"
-                                width={50}
-                                height={50}
-                                className="cursor-pointer"
-                            />
+                            <Logo />
                         </Link>
                     </li>
                 </ul>
             </nav>
             {/* Hauptinhalt */}
-            <main>{children}</main>
+            <main className="bg-white dark:bg-gray-700">{children}</main>
             {/* Footer */}
-            <footer className="bg-black p-2 text-center dark:bg-white text-black">
+            <footer className="bg-gray-800 p-2 text-center ">
                 <p>Made by Enzo Terenziani</p>
             </footer>
         </div>
