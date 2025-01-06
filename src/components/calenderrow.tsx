@@ -8,21 +8,21 @@ export default function Calenderrows() {
     const [titles, setTitles] = useState<string[]>(Array(42).fill(""));
 
     function handleCellClick(index: number) {
-        setSelectedCell(index); // Index der Zelle speichern
+        setSelectedCell(index);
         if (noteRef.current) {
-            noteRef.current.showNote(); // Notiz anzeigen
+            noteRef.current.showNote();
         }
     }
 
     function handleSave() {
         if (noteRef.current && selectedCell !== null) {
-            const Tasktitle = noteRef.current.getTitle(); // Titel der Notiz abrufen
+            const Tasktitle = noteRef.current.getTitle();
             setTitles((prevTitles) => {
                 const newTitles = [...prevTitles];
-                newTitles[selectedCell] = Tasktitle; // Titel der Zelle zuweisen
+                newTitles[selectedCell] = Tasktitle;
                 return newTitles;
             });
-            if (noteRef.current) noteRef.current.showNote(); // Notiz schließen
+            if (noteRef.current) noteRef.current.showNote();
         }
     }
 
@@ -48,7 +48,7 @@ export default function Calenderrows() {
                     >
                         <div className="font-bold">{i + 1}</div>
                         <div className="text-sm text-gray-700 bg-gray-100 rounded p-1 w-full text-center">
-                            {titles[i] || "No Note"} {/* Titel anzeigen oder Standardtext */}
+                            {titles[i] || "No Note"}
                         </div>
                     </div>
                 ))}
