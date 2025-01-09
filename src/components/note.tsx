@@ -40,6 +40,7 @@ const Note = forwardRef<NoteRef, NoteProps>((props, ref) => {
     function handleSave(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         props.onSave();
+        setInputs({ Title: "", Textnote: ""});
         showNote();
     }
 
