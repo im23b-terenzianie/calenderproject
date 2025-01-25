@@ -48,7 +48,7 @@ export default function Calenderrows() {
                         id={`cell${i + 1}`}
                         onClick={() => handleCellClick(i)}
                     >
-                        <div className="font-bold">{i + 1} tt</div>
+                        <div className="date font-bold">{i + 1}</div>
                         <div className="text-sm text-gray-700 bg-gray-100 rounded p-1 w-full text-center">
                             {titles[i] || "No Note"}
                         </div>
@@ -56,7 +56,7 @@ export default function Calenderrows() {
                 ))}
             </div>
 
-            <Note ref={noteRef} Title="" Textnote="" onSave={handleSave} />
+            <Note ref={noteRef} Title="" Textnote="" onSave={handleSave}/>
         </div>
     );
 }

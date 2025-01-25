@@ -47,22 +47,22 @@
         return 0;
     }
 
-    function createcalender() {
-        const weekday = startday();
-        const monthdays = daysinmonth();
-        let i = 1
-        while (i <= 42) {
-            let cell = document.getElementById("cell" + i)
-            if (cell) {
-                if (i < weekday || i > monthdays + weekday - 1) {
-                    cell.innerHTML = ""
-                } else {
-                    cell.innerHTML = (i - weekday + 1).toString()
-                }
-            }
-            i++;
-        }
-    }
+     function createcalender() {
+         const weekday = startday();
+         const monthdays = daysinmonth();
+         let i = 1;
+         while (i <= 42) {
+             let cell = document.getElementById("cell" + i);
+             if (cell) {
+                 if (i < weekday || i > monthdays + weekday - 1) {
+                     cell.querySelector(".date")!.innerHTML = "";
+                 } else {
+                     cell.querySelector(".date")!.innerHTML = (i - weekday + 1).toString();
+                 }
+             }
+             i++;
+         }
+     }
 
     useEffect(() => {
         createcalender();
