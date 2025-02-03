@@ -40,22 +40,22 @@ const TodoList = forwardRef<TodoProps>((props, ref) => {
             <button onClick={showTodo}>Show Todo</button> <button onClick={hideTodo}>Hide Todo</button>
             {isVisible && (
                 <div className="bg-white text-black">
-                    <h1>Todo List</h1>
-                    <div>
+                    <h1 className="dark:text-white bg-gray-700">Todo List</h1>
+                    <div className="dark:text-white bg-gray-700">
                         <input
                             type="text"
                             placeholder="Add Todo"
                             name="todo"
                             value={newTodo}
                             onChange={handleChange}
-
+                            className="dark:text-white bg-gray-700"
                         />
                         <button onClick={addTodo}>Add</button>
                     </div>
                     <div>
                         <ul>
                             {todo.map((item, index) => (
-                                <li key={index}>{item}</li>
+                                <li key={index} className="dark:text-white bg-gray-700">{item}</li>
                             ))}
                         </ul>
                     </div>
