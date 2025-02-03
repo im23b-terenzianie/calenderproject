@@ -37,7 +37,7 @@ const TodoList = forwardRef<TodoProps>((props, ref) => {
 
     return (
         <div>
-            <button onClick={showTodo}>Show Todo</button> <button onClick={hideTodo}>Hide Todo</button>
+            <button onClick={showTodo} className="border-2">Show Todo</button> <button onClick={hideTodo} className="border-2">Hide Todo</button>
             {isVisible && (
                 <div className="bg-white text-black">
                     <h1 className="dark:text-white bg-gray-700">Todo List</h1>
