@@ -31,33 +31,35 @@ const TodoList = forwardRef<TodoProps>((props, ref) => {
     function hideTodo() {
         setIsVisible(false);
     }
+
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         setNewTodo(event.target.value);
     }
 
     return (
         <div>
-            <button onClick={showTodo} className="border-2">Show Todo</button> <button onClick={hideTodo} className="border-2">Hide Todo</button>
+            <button onClick={showTodo} className="border-2">Show Todo</button>
             {isVisible && (
-                <div className="bg-white text-black">
-                    <h1 className="dark:text-white bg-gray-700">Todo List</h1>
-                    <div className="dark:text-white bg-gray-700">
-                        <input
-                            type="text"
-                            placeholder="Add Todo"
-                            name="todo"
-                            value={newTodo}
-                            onChange={handleChange}
-                            className="dark:text-white bg-gray-700"
-                        />
-                        <button onClick={addTodo}>Add</button>
-                    </div>
-                    <div>
-                        <ul>
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-4 rounded shadow-lg w-1/3">
+                        <h1 className="text-xl font-bold mb-4">Todo List</h1>
+                        <div className="mb-4">
+                            <input
+                                type="text"
+                                placeholder="Add Todo"
+                                name="todo"
+                                value={newTodo}
+                                onChange={handleChange}
+                                className="border p-2 w-full"
+                            />
+                            <button onClick={addTodo} className="mt-2 p-2 bg-blue-500 text-white rounded">Add</button>
+                        </div>
+                        <ul className="mb-4">
                             {todo.map((item, index) => (
-                                <li key={index} className="dark:text-white bg-gray-700">{item}</li>
+                                <li key={index} className="border-b p-2">{item}</li>
                             ))}
                         </ul>
+                        <button onClick={hideTodo} className="p-2 bg-red-500 text-white rounded">Close</button>
                     </div>
                 </div>
             )}
