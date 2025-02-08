@@ -11,7 +11,7 @@ interface LayoutProps {
 
 export default function Base({ children }: LayoutProps) {
     return (
-        <div className="app">
+        <div className="bg-gray-200 dark:bg-gray-700 app">
             <nav className="flex justify-between items-center bg-gray-800 p-2 ">
                 <ul className="flex items-center">
                     <li>

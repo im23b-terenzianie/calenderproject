@@ -52,7 +52,7 @@ export default function Register() {
 
     return (
 
-        <div className="flex justify-center items-center h-screen">
+        <div className="flex justify-center items-center h-screen bg-gray-200 dark:bg-gray-700">
             <div className="bg-black p-5 rounded-lg dark:bg-white">
                 <h1 className="text-2xl text-white text-center dark:text-black">Register</h1>
                 <div className="flex flex-col">
