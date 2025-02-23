@@ -17,7 +17,6 @@ export default function Login() {
                 <div className="flex justify-between">
                 <Link className="p-2 bg-gray-800 rounded-lg dark:bg-gray-200 text-black" type="submit" href="/calender" >Login</Link>
                 <Link href="/register" className="p-2 bg-gray-800 rounded-lg dark:bg-gray-200 text-black">Register</Link>
-
             </div>
         </div>
     </div>
