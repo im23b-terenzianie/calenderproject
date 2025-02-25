@@ -38,11 +38,13 @@ const TodoList = forwardRef<TodoProps>((props, ref) => {
 
     return (
         <div>
-            <button onClick={showTodo} className="border-2">Show Todo</button>
+            <div className="flex justify-center">
+            <button onClick={showTodo} className="border-2 my-1 mx-1 w-1/12">Show Todo</button>
+            </div>
             {isVisible && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="bg-white p-4 rounded shadow-lg w-1/3">
-                        <h1 className="text-xl font-bold mb-4">Todo List</h1>
+                        <h1 className="text-xl mb-4 text-black">Todo List</h1>
                         <div className="mb-4">
                             <input
                                 type="text"
@@ -54,9 +56,9 @@ const TodoList = forwardRef<TodoProps>((props, ref) => {
                             />
                             <button onClick={addTodo} className="mt-2 p-2 bg-blue-500 text-white rounded">Add</button>
                         </div>
-                        <ul className="mb-4">
+                        <ul className="mb-4 ">
                             {todo.map((item, index) => (
-                                <li key={index} className="border-b p-2">{item}</li>
+                                <li key={index} className="border-b p-2 text-black">{item}</li>
                             ))}
                         </ul>
                         <button onClick={hideTodo} className="p-2 bg-red-500 text-white rounded">Close</button>

@@ -7,7 +7,8 @@ import Todolist from "@/src/components/todolist";
 export default function Calender() {
     return (
         <div>
-            <Baseloggedin> <Todolist/>
+            <Baseloggedin>
+                <Todolist/>
                 <Monthbutton/>
                 <Calenderrows/>
             </Baseloggedin>
