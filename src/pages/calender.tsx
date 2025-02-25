@@ -8,8 +8,14 @@ export default function Calender() {
     return (
         <div>
             <Baseloggedin>
-                <Todolist/>
-                <Monthbutton/>
+                <div>
+                    <div >
+                        <Monthbutton/>
+                    </div>
+                    <div>
+                        <Todolist/>
+                    </div>
+                </div>
                 <Calenderrows/>
             </Baseloggedin>
         </div>

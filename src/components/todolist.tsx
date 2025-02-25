@@ -38,7 +38,7 @@ const TodoList = forwardRef<TodoProps>((props, ref) => {
 
     return (
         <div>
-            <div className="flex justify-center">
+            <div className="flex justify-end">
             <button onClick={showTodo} className="border-2 my-1 mx-1 w-1/12">Show Todo</button>
             </div>
             {isVisible && (
