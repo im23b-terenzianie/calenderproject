@@ -9,7 +9,7 @@ export default function Calender() {
         <div>
             <Baseloggedin>
                 <div>
-                    <div >
+                    <div>
                         <Monthbutton/>
                     </div>
                     <div>
