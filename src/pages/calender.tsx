@@ -8,11 +8,11 @@ export default function Calender() {
     return (
         <div>
             <Baseloggedin>
-                <div>
-                    <div>
+                <div className="grid columns-3">
+                    <div className="col-start-2">
                         <Monthbutton/>
                     </div>
-                    <div>
+                    <div className="col-start-3">
                         <Todolist/>
                     </div>
                 </div>

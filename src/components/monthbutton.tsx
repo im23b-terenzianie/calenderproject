@@ -76,7 +76,7 @@
                 }}>
                     &lt;
                 </button>
-                <div className="my-1 mx-3 border-2 w-1/12 text-center" id="currentmonth">
+                <div className="my-1 mx-3 border-2 p-1 text-center" id="currentmonth">
                     January
                 </div>
                 <button onClick={() => {
