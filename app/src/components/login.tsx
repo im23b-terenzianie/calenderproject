@@ -1,4 +1,4 @@
-import '../../app/globals.css';
+import '../../globals.css';
 import { login, signup } from './action';
 
 export default function Login() {
@@ -13,7 +13,7 @@ export default function Login() {
                     </div>
                     <div className="flex flex-col">
                         <label htmlFor="password" className="text-white dark:text-black">Password:</label>
-                        <input id="password" name="password" type="password" required className="p-2 mb-3 bg-gray-800 rounded-lg dark:bg-gray-200" />
+                        <input id="password" name="password" type="password" required className="p-2 mb-3 bg-gray-800 rounded-lg dark:bg-gray-200 text-black" />
                     </div>
                     <div className="flex justify-between">
                         <button formAction={login} className="p-2 bg-gray-800 rounded-lg dark:bg-gray-200 text-black">Log in</button>

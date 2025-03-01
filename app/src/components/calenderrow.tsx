@@ -1,13 +1,11 @@
-import "../../app/globals.css";
+import "../../globals.css";
 import React, { useRef, useState } from "react";
 import Note, { NoteRef } from "./note";
-
 
 export default function Calenderrows() {
     const noteRef = useRef<NoteRef>(null as any);
     const [selectedCell, setSelectedCell] = useState<number | null>(null);
     const [titles, setTitles] = useState<string[]>(Array(42).fill(""));
-
 
     function handleCellClick(index: number) {
         setSelectedCell(index);

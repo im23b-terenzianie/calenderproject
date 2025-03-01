@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import '../../app/globals.css';
+import '../../globals.css';
 import Login from '../components/loginbutton';
 import Logo from '../components/Logo';
 
@@ -15,7 +15,7 @@ export default function Base({ children }: LayoutProps) {
             <nav className="flex justify-between items-center bg-gray-800 p-2 ">
                 <ul className="flex items-center">
                     <li>
-                        <Link href="/" className="dark:text-black">
+                        <Link href="/public" className="dark:text-black">
                             <Logo />
                         </Link>
                     </li>

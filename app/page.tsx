@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Base from "@/src/layout/Base";
+import Base from "@/app/src/layout/Base";
 import '../app/globals.css';
 export default function Home() {
     return (

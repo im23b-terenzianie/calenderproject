@@ -1,4 +1,4 @@
-import '../../app/globals.css';
+import '../../globals.css';
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import {router} from "next/client";
