@@ -1,3 +1,4 @@
+'use client'
 import React, { useImperativeHandle, useState, forwardRef } from "react";
 
 export interface TodoProps {

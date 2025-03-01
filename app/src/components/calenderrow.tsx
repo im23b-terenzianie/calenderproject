@@ -1,3 +1,4 @@
+'use client'
 import "../../globals.css";
 import React, { useRef, useState } from "react";
 import Note, { NoteRef } from "./note";

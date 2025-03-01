@@ -4,7 +4,7 @@ import Calenderrows from "@/app/src/components/calenderrow";
 import Monthbutton from "@/app/src/components/monthbutton";
 import Todolist from "@/app/src/components/todolist";
 
-export default function Calender() {
+export default function Calendar() {
     return (
         <div>
             <Baseloggedin>
