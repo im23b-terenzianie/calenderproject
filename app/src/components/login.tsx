@@ -1,6 +1,7 @@
-'use client'
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabaseClient';
 import { signup } from '@/lib/auth';
 
@@ -8,13 +9,7 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState<string | null>(null);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const router = useRouter();
-    useEffect(() => {
-        if (isLoggedIn) {
-            router.push('/calendar');
-        }
-    }, [isLoggedIn, router]);
 
     const handleLogin = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -23,7 +18,7 @@ export default function Login() {
             setError(error.message);
         } else {
             setError(null);
-            setIsLoggedIn(true); // Setze den Login-Status, um die Weiterleitung zu triggern
+            router.push('/calendar'); // Redirect to dashboard or another page
         }
     };
 
@@ -32,7 +27,7 @@ export default function Login() {
         try {
             await signup(email, password);
             setError(null);
-            setIsLoggedIn(true);
+            router.push('/calendar'); // Redirect to dashboard or another page
         } catch (err) {
             const error = err as { message: string };
             setError(error.message);
