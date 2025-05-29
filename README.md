@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Calender Project
 
-## Getting Started
+Welcome to the **Calender Project**!  
+This is my very first project using [Next.js](https://nextjs.org/). I created this application as a personal learning experience to build a complete full-stack web app, handling both the frontend and backend—from UI to database integration.
 
-First, run the development server:
+## 🚀 Project Motivation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Learning Next.js:** My main goal was to get hands-on experience with Next.js, understanding both its frontend and server-side capabilities.
+- **Full-Stack Experience:** I wanted to learn how to integrate a backend database and user authentication within a modern React framework.
+- **Experimentation:** This project served as a playground for testing out new technologies and best practices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Database & Auth:** [Supabase](https://supabase.com/) (integration currently paused)
+- **Styling:** CSS Modules (can be swapped for Tailwind or other solutions)
+- **Hosting:** (Add here if you deployed, e.g., Vercel or Netlify)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⏸️ Project Status
 
-## Learn More
+**This project is currently on pause** due to some limitations and issues I encountered with Supabase integration. I plan to revisit and continue development once I find a more suitable backend solution or when Supabase addresses the challenges I faced.
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Features (Planned & Implemented)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [x] Next.js app structure
+- [x] Page routing and navigation
+- [x] Calendar UI (basic)
+- [x] User authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📚 What I Learned
 
-## Deploy on Vercel
+- Setting up a Next.js project from scratch
+- Working with React components and hooks
+- Structuring a full-stack web application
+- Initial steps in integrating authentication and a backend database
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 💡 What's Next?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Resume development once backend issues are resolved
+- Polish the UI and add more calendar features
+- Explore deploying the app publicly
+
+## 🤝 Contributions
+
+As this is a personal learning project, contributions are not currently open. However, if you have suggestions or feedback, feel free to open an issue!
+
+---
+
+Thanks for checking out my project!  
+— **im23b-terenzianie**
